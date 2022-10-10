@@ -23,7 +23,7 @@ const Footer = () => {
               </div>
 
               <div className="item mb-10 max-w-xs ">
-                <h3 mb-3 className="font-bold uppercase">
+                <h3  className="font-bold uppercase mb-3">
                   store 2
                 </h3>
                 <div className="text-sm mt-3">
@@ -37,7 +37,7 @@ const Footer = () => {
               </div>
 
               <div className="item mb-10 max-w-xs ">
-                <h3 mb-3 className="font-bold uppercase">
+                <h3  className="font-bold uppercase mb-3">
                   store 3
                 </h3>
                 <div className="text-sm mt-3">
@@ -51,7 +51,7 @@ const Footer = () => {
               </div>
 
               <div className="item mb-10 max-w-xs ">
-                <h3 mb-3 className="font-bold uppercase">
+                <h3  className="font-bold uppercase mb-3">
                   store 4
                 </h3>
                 <div className="text-sm mt-3">
@@ -65,7 +65,7 @@ const Footer = () => {
               </div>
 
               <div className="item mb-10 max-w-xs ">
-                <h3 mb-3 className="font-bold uppercase">
+                <h3  className="font-bold uppercase mb-3">
                   store 5
                 </h3>
                 <div className="text-sm mt-3">

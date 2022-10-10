@@ -378,7 +378,7 @@ const DetailProduct = () => {
               sản phẩm vừa xem
             </h3>
             <div className="flex flex-row justify-between flex-wrap items-end">
-              {productRecentArr.length
+              {productRecentArr
                 ? productRecentArr.map((item, i) => {
                     return (
                       <div
