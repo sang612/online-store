@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./_Playground/main.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/Hompage/Homepage";
+import DetailProduct from "./pages/DetailProduct/DetailProduct";
+import HomeTemplate from "./templates/HomeTemplate";
+import Cart from "./pages/Cart/Cart";
+import ProductByCategory from "./pages/Category/ProductByCategory";
+import NotFoundPage from "./pages/404/NotFoundPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<HomeTemplate />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/detail/:id" element={<DetailProduct />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/category/:categoryName"
+            element={<ProductByCategory />}
+          />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
