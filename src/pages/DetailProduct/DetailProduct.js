@@ -143,7 +143,7 @@ const DetailProduct = () => {
             <img
               src={productDetail.image}
               alt={productDetail.title}
-              className="w-1/2 md:w-2/3 md:h-auto md:p-20 p-10 "
+              className="w-52 h-52 md:w-2/3 md:h-auto md:p-20 p-10 "
             />
             <div className="prodcut-info w-1/2 md:w-1/3">
               <h3 className="font-bold text-xl">{productDetail.title}</h3>
@@ -395,7 +395,7 @@ const DetailProduct = () => {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="w-auto h-64"
+                            className="md:w-auto md:h-64 w-52 h-52"
                           />
                         </a>
                         <a href={`/detail/${item.id}`}>{item.title}</a>
