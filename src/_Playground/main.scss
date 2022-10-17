@@ -43,6 +43,31 @@ html {
     transform: translateY(0);
     pointer-events: auto;
   }
+
+  .header-mobile {
+    display: none;
+
+    .list-mobile {
+      top: 25px;
+      left: -70px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+      transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+      z-index: 1;
+
+      .dropdown-menu-mobile {
+        top: 0;
+        left: -204px;
+      }
+    }
+
+    &:hover .list-mobile {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+  }
 }
 
 .search {
@@ -284,6 +309,19 @@ html {
     .col-right {
       font-size: 150px;
       text-shadow: 5px 5px gray;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    .header-nav,
+    .header-item {
+      display: none;
+    }
+
+    .header-mobile {
+      display: block;
     }
   }
 }

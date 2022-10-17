@@ -35,14 +35,24 @@ const ProductList = () => {
         {productList.length ? (
           productList.map((product, index) => {
             return (
-              <NavLink className="item" to={`/detail/${product.id}`} key={index}>
+              <NavLink
+                className="item"
+                to={`/detail/${product.id}`}
+                key={index}
+              >
                 <div className="item-detail flex flex-col items-center">
                   <img
                     src={product.image}
                     alt={product.title}
-                    className="h-80 w-auto hover:scale-150 ease-in-out duration-500"
+                    className="h-20 md:h-80 w-auto hover:scale-150 ease-in-out duration-500"
                   />
-                  <h3>{product.title}</h3>
+                  <h3>
+                    {window.innerWidth < 768 ? product.title.length > 20
+                      ? product.title.substring(0, 20) + "..." 
+                      : product.title : product.title.length > 100
+                      ? product.title.substring(0, 100) + "..." 
+                      : product.title }
+                  </h3>
                   <b>{product.price}</b>
                 </div>
               </NavLink>

@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <footer className="footer bg-black">
-      <div className="container pl-40 py-10">
-        <div className="address flex flex-row text-white">
-          <div className="col-left w-2/3 border-r border-white pr-5">
+      <div className="container pl-10 md:pl-40 py-10">
+        <div className="address flex flex-col md:flex md:flex-row text-white">
+          <div className="col-left md:w-2/3 border-r border-white pr-5">
             <h2 className="text-2xl mb-5">TP. Hồ Chí Minh</h2>
 
             <div className="flex flex-row flex-wrap items-center justify-between w-full">
@@ -79,7 +79,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-right w-1/3 pl-10">
+          <div className="col-right md:w-1/3 md:pl-10">
             <h2 className="text-2xl mb-5">TP. BIÊN HÒA</h2>
 
             <div className="flex flex-row flex-wrap items-center justify-between w-full border-b border-white">

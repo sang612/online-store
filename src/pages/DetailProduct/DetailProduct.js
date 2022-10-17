@@ -43,6 +43,12 @@ const DetailProduct = () => {
       if (productRecentArr.length > 4) {
         productRecentArr.splice(1, productRecentArr.length - 4);
       }
+
+      productRecentArr.forEach((item, index) => {
+        if (!item.id) {
+          productRecentArr.splice(index, 1);
+        }
+      });
       localStorage.setItem("productRecent", JSON.stringify(productRecentArr));
     }
   }, []);
@@ -137,9 +143,9 @@ const DetailProduct = () => {
             <img
               src={productDetail.image}
               alt={productDetail.title}
-              className="w-2/3 h-auto p-20 "
+              className="w-1/2 md:w-2/3 md:h-auto md:p-20 p-10 "
             />
-            <div className="prodcut-info w-1/3">
+            <div className="prodcut-info w-1/2 md:w-1/3">
               <h3 className="font-bold text-xl">{productDetail.title}</h3>
               <div className="text-gray-500 mb-3">
                 <b>SKU:</b> {productDetail.id}
@@ -174,7 +180,7 @@ const DetailProduct = () => {
                 <div className="size-container flex flex-row mt-2 mb-5">
                   <button
                     id="size1"
-                    className="size-item border border-gray-300 py-2 w-10 mr-3 checked"
+                    className="size-item border border-gray-300 py-2 px-2 text-xs md:text-base md:w-10 mr-3 checked"
                     onClick={(e) => {
                       handleCheckedSize(e);
                     }}
@@ -189,7 +195,7 @@ const DetailProduct = () => {
 
                   <button
                     id="size2"
-                    className="size-item border border-gray-300 py-2 w-10 mr-3"
+                    className="size-item border border-gray-300 py-2 px-2 text-xs md:text-base md:w-10 mr-3"
                     onClick={(e) => {
                       handleCheckedSize(e);
                     }}
@@ -203,7 +209,7 @@ const DetailProduct = () => {
                   </button>
                   <button
                     id="size3"
-                    className="size-item border border-gray-300 py-2 w-10 mr-3"
+                    className="size-item border border-gray-300 py-2 px-2 text-xs md:text-base md:w-10 mr-3"
                     onClick={(e) => {
                       handleCheckedSize(e);
                     }}
@@ -217,7 +223,7 @@ const DetailProduct = () => {
                   </button>
                   <button
                     id="size4"
-                    className="size-item border border-gray-300 py-2 w-10 mr-3"
+                    className="size-item border border-gray-300 py-2 px-2 text-xs md:text-base md:w-10 mr-3"
                     onClick={(e) => {
                       handleCheckedSize(e);
                     }}
@@ -233,7 +239,7 @@ const DetailProduct = () => {
               </div>
               <hr />
               <div className="size-tutorial mt-3">
-                <button className="bg-black text-white uppercase font-bold py-2 px-10 rounded-md text-xs w-72 text-left">
+                <button className="bg-black text-white uppercase font-bold py-2 px-1 md:px-10 rounded-md text-xs md:w-72 text-left">
                   Hướng dẫn chọn size
                 </button>
               </div>
@@ -325,7 +331,7 @@ const DetailProduct = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-3 mt-20 px-8 gap-8">
+          <div className="md:grid md:grid-cols-3 mt-20 px-8 gap-8">
             <div className="grid-item border-t-2 border-gray-400 pt-2">
               <h3 className="mb-2">CHÍNH SÁCH GIAO NHẬN - ĐỔI TRẢ HÀNG</h3>
               <p>
@@ -394,12 +400,12 @@ const DetailProduct = () => {
                         </a>
                         <a href={`/detail/${item.id}`}>{item.title}</a>
                         <span className="font-bold underline">
-                          {item.price}$
+                          {item.price ? item.price + "$" : ""}
                         </span>
                       </div>
                     );
                   })
-                : "cc"}
+                : ""}
             </div>
           </div>
 
@@ -415,7 +421,7 @@ const DetailProduct = () => {
               </span>
             </div>
 
-            <div className="flex flex-row items-center justify-start border border-black p-2 w-96 mx-8">
+            <div className="flex flex-row items-center justify-start border border-black p-2 w-96 md:mx-8">
               <img
                 src="//theme.hstatic.net/1000253775/1000820059/14/info_img_2.png?v=567"
                 alt=""

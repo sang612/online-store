@@ -13,6 +13,7 @@ const Cart = () => {
   const { cart } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [total, setTotal] = useState(0);
+  const [errorMessage, setErrorMessage] = useState();
   const shipping = 2;
   useEffect(() => {
     let total2 = 0;
@@ -136,13 +137,22 @@ const Cart = () => {
                   <Popup
                     modal
                     trigger={
-                      <button className="bg-black text-white py-3 w-full font-bold tracking-widest hover:scale-105 transition-all duration-300">
+                      <button
+                        disabled={total === 0}
+                        className="bg-black text-white py-3 w-full font-bold tracking-widest hover:scale-105 transition-all duration-300"
+                      >
                         Hoàn tất đơn hàng
                       </button>
                     }
                   >
-                    {(close) => <CheckoutContent close={close} total= {total ? total + shipping : 0} />}
+                    {(close) => (
+                      <CheckoutContent
+                        close={close}
+                        total={total ? total + shipping : 0}
+                      />
+                    )}
                   </Popup>
+                  <div>{errorMessage}</div>
                 </td>
               </tr>
             </tbody>

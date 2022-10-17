@@ -62,7 +62,7 @@ const Header = () => {
         <Link to="/" className="font-bold text-2xl italic">
           FakeStore
         </Link>
-        <nav>
+        <nav className="header-nav">
           <ul className="flex flex-row uppercase">
             <li className="mr-5 font-bold text-sm">
               <Link to="/">trang chủ</Link>
@@ -216,6 +216,148 @@ const Header = () => {
               </span>
             </i>
           </Link>
+        </div>
+
+        <div className="header-mobile relative">
+          <i className="fa-solid fa-bars dropdown-button-mobile"></i>
+          <ul className="list-mobile flex flex-col uppercase absolute text-left bg-gray-100 justify-between items-center w-36">
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <Link to="/">trang chủ</Link>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <div>
+                <div className="dropdown inline-block relative">
+                  <button className=" inline-flex items-center">
+                    <span className="mr-1 uppercase">Sản phẩm</span>
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </button>
+                  <ul className="dropdown-menu dropdown-menu-mobile absolute min-w-max  text-gray-700 pt-1">
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/"
+                      >
+                        Tất cả sản phẩm
+                      </Link>
+                    </li>
+
+                    {categoryList.length
+                      ? categoryList.map((item, index) => {
+                          return (
+                            <li className="" key={index}>
+                              <Link
+                                className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                                to={`/category/${item}`}
+                              >
+                                {item}
+                              </Link>
+                            </li>
+                          );
+                        })
+                      : ""}
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <div>
+                <div className="dropdown inline-block relative">
+                  <button className=" inline-flex items-center">
+                    <span className="mr-1 uppercase">
+                      hướng dẫn - chính sách
+                    </span>
+                    <svg
+                      className="fill-current h-4 w-4"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                  </button>
+                  <ul className="dropdown-menu dropdown-menu-mobile absolute min-w-max  text-gray-700 pt-1">
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/size-tutorial"
+                      >
+                        hướng dẫn chọn size
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/doitra"
+                      >
+                        chính sách đổi trả
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/dathang"
+                      >
+                        hướng dẫn đặt hàng
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/khachhang"
+                      >
+                        chính sách khách hàng
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/nganhang"
+                      >
+                        tài khoản ngân hàng
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/donhang"
+                      >
+                        kiểm tra đơn hàng
+                      </Link>
+                    </li>
+
+                    <li className="">
+                      <Link
+                        className="text-xs bg-white uppercase hover:text-orange-500 py-2 px-5 pr-10 text-left block whitespace-no-wrap border-b border-gray-300"
+                        to="/kiemtrasp"
+                      >
+                        kiểm tra sản phẩm tại chi nhánh
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <Link to="/gioithieu">giới thiệu</Link>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <Link to="/news">news</Link>
+            </li>
+          </ul>
         </div>
       </div>
     </header>
