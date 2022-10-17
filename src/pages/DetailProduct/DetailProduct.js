@@ -143,7 +143,7 @@ const DetailProduct = () => {
             <img
               src={productDetail.image}
               alt={productDetail.title}
-              className="w-52 h-52 md:w-2/3 md:h-auto md:p-20 p-10 "
+              className="w-1/3 h-40 md:w-2/3 md:h-auto md:p-20 p-10 "
             />
             <div className="prodcut-info w-1/2 md:w-1/3">
               <h3 className="font-bold text-xl">{productDetail.title}</h3>
@@ -379,7 +379,7 @@ const DetailProduct = () => {
             </div>
           </div>
 
-          <div className="recent-view mt-20">
+          <div className="recent-view mt-20 px-2 md:px-0">
             <h3 className="font-bold uppercase text-4xl text-center">
               sản phẩm vừa xem
             </h3>
@@ -395,10 +395,18 @@ const DetailProduct = () => {
                           <img
                             src={item.image}
                             alt={item.title}
-                            className="md:w-auto md:h-64 w-52 h-52"
+                            className="md:w-auto md:h-64 w-36 h-36"
                           />
                         </a>
-                        <a href={`/detail/${item.id}`}>{item.title}</a>
+                        <a href={`/detail/${item.id}`}>
+                          {window.innerWidth < 768
+                            ? item.title.length > 20
+                              ? item.title.substring(0, 20) + "..."
+                              : item.title
+                            : item.title.length > 100
+                            ? item.title.substring(0, 100) + "..."
+                            : item.title}
+                        </a>
                         <span className="font-bold underline">
                           {item.price ? item.price + "$" : ""}
                         </span>
@@ -409,8 +417,8 @@ const DetailProduct = () => {
             </div>
           </div>
 
-          <div className="service mt-5 flex flex-row justify-center">
-            <div className="flex flex-row items-center justify-start border border-black p-2 w-96">
+          <div className="service mt-5 flex flex-row flex-wrap justify-center">
+            <div className="flex flex-row items-center justify-start border border-black p-2 w-full md:w-96">
               <img
                 src="//theme.hstatic.net/1000253775/1000820059/14/info_img_1.png?v=567"
                 alt=""
@@ -421,7 +429,7 @@ const DetailProduct = () => {
               </span>
             </div>
 
-            <div className="flex flex-row items-center justify-start border border-black p-2 w-96 md:mx-8">
+            <div className="flex flex-row items-center justify-start border border-black p-2 w-full md:w-96 md:mx-8">
               <img
                 src="//theme.hstatic.net/1000253775/1000820059/14/info_img_2.png?v=567"
                 alt=""
@@ -432,7 +440,7 @@ const DetailProduct = () => {
               </span>
             </div>
 
-            <div className="flex flex-row items-center justify-start border border-black p-2 w-96">
+            <div className="flex flex-row items-center justify-start border border-black p-2 w-full md:w-96">
               <img
                 src="//theme.hstatic.net/1000253775/1000820059/14/info_img_3.png?v=567"
                 alt=""
