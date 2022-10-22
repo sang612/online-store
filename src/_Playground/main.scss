@@ -324,4 +324,24 @@ html {
       display: block;
     }
   }
+
+  .notfound {
+    .container {
+      margin-bottom: 20px;
+      .col-left {
+        font-size: 70px;
+        text-shadow: 5px 5px gray;
+        text-align: center;
+        width: 100%;
+      }
+
+      .col-right {
+        font-size: 70px;
+        text-shadow: 5px 5px gray;
+        text-align: center;
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+  }
 }

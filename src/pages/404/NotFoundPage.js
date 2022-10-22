@@ -3,7 +3,7 @@ import React from "react";
 const NotFoundPage = () => {
   return (
     <div className="notfound mt-20">
-      <div className="container flex flex-row  items-center">
+      <div className="container flex md:flex-row flex-col items-center ">
         <div className="col-left w-1/2 text-right ">
           404
         </div>
