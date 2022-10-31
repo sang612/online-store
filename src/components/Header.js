@@ -219,7 +219,7 @@ const Header = () => {
         </div>
 
         <button
-          className="text-2xl md:hidden"
+          className=" text-2xl md:hidden"
           onClick={handleToggleSearch}
         >
           <i className="fa-solid fa-magnifying-glass text-base"></i>
@@ -367,6 +367,10 @@ const Header = () => {
 
             <li className="font-bold text-sm mb-5 text-center mx-auto">
               <Link to="/cart">giỏ hàng</Link>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <Link to="/userDetail">Cá nhân</Link>
             </li>
           </ul>
         </div>

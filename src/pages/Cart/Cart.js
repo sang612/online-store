@@ -24,9 +24,9 @@ const Cart = () => {
   }, [cart]);
 
   return (
-    <div className="cart px-20 mt-20">
-      <div className="container flex flex-row">
-        <div className="col-left w-2/3 border-r px-2">
+    <div className="cart md:px-20 pr-5 mt-20">
+      <div className="container flex md:flex-row flex-col items-center">
+        <div className="col-left md:w-2/3 w-full border-r px-2">
           <h3 className="h3 text-xl font-bold">Giỏ hàng</h3>
           <table className="w-full text-sm text-left ">
             <thead className="text-xs  uppercase">
@@ -59,7 +59,11 @@ const Cart = () => {
                         </button>
                       </td>
                       <td>
-                        <img src={item.image} alt={item.title} width={150} />
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="md:w-20 max-w-none w-14"
+                        />
                       </td>
                       <td>
                         <Link to={`/detail/${item.id}`}>
@@ -112,7 +116,7 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className="col-right w-1/3 px-2">
+        <div className="col-right md:w-1/3 w-full px-2 ">
           <div className="h3 text-xl font-bold">Thanh toán</div>
           <table className="w-full text-sm text-left">
             <tbody>
