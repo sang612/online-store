@@ -24,28 +24,28 @@ const Banner = () => {
         <div>
           <div
             style={{ backgroundImage: `url(${banner1})` }}
-            className="w-full h-screen bg-center bg-no-repeat bg-cover"
+            className="w-full h-80 md:h-screen bg-center bg-no-repeat bg-contain md:bg-cover"
           ></div>
         </div>
 
         <div>
           <div
             style={{ backgroundImage: `url(${banner2})` }}
-            className="w-full h-screen bg-center bg-no-repeat bg-cover"
+            className="w-full h-80 md:h-screen bg-center bg-no-repeat bg-contain md:bg-cover"
           ></div>
         </div>
 
         <div>
           <div
             style={{ backgroundImage: `url(${banner3})` }}
-            className="w-full h-screen bg-center bg-no-repeat bg-cover"
+            className="w-full h-80 md:h-screen bg-center bg-no-repeat bg-contain md:bg-cover"
           ></div>
         </div>
 
         <div>
           <div
             style={{ backgroundImage: `url(${banner4})` }}
-            className="w-full h-screen bg-center bg-no-repeat bg-cover"
+            className="w-full h-80 md:h-screen bg-center bg-no-repeat bg-contain md:bg-cover"
           ></div>
         </div>
       </Slider>

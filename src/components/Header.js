@@ -58,7 +58,7 @@ const Header = () => {
       className="header bg-gray-100 w-full fixed z-10 transition-all duration-300 top-0 left-0"
       id="header"
     >
-      <div className="header-container flex flex-row justify-between px-20 py-3">
+      <div className="header-container flex flex-row items-center justify-between px-20 py-3">
         <Link to="/" className="font-bold text-2xl italic">
           FakeStore
         </Link>
@@ -218,8 +218,15 @@ const Header = () => {
           </Link>
         </div>
 
+        <button
+          className="text-2xl md:hidden"
+          onClick={handleToggleSearch}
+        >
+          <i className="fa-solid fa-magnifying-glass text-base"></i>
+        </button>
+
         <div className="header-mobile relative">
-          <i className="fa-solid fa-bars dropdown-button-mobile"></i>
+          <i className="fa-solid fa-bars dropdown-button-mobile translate-y-0.5"></i>
           <ul className="list-mobile flex flex-col uppercase absolute text-left bg-gray-100 justify-between items-center w-36">
             <li className="font-bold text-sm mb-5 text-center mx-auto">
               <Link to="/">trang chủ</Link>
@@ -356,6 +363,10 @@ const Header = () => {
 
             <li className="font-bold text-sm mb-5 text-center mx-auto">
               <Link to="/news">news</Link>
+            </li>
+
+            <li className="font-bold text-sm mb-5 text-center mx-auto">
+              <Link to="/cart">giỏ hàng</Link>
             </li>
           </ul>
         </div>
